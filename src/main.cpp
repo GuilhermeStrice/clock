@@ -170,7 +170,7 @@ void loop()
 	}
 
 	// change between time mode and chronometer mode. after one button press only change after one second
-	if (digitalRead(MODE) == HIGH && currentMillis - mode_millis < 1000)
+	if (digitalRead(MODE) == HIGH && currentMillis - mode_millis >= 1000)
 	{
 		mode_millis = currentMillis;
 		time_mode = !time_mode;
@@ -198,7 +198,7 @@ void loop()
 		}
 
 		// show time for 30 seconds
-		if (currentMillis - switch_millis < 30000 && show_time)
+		if (currentMillis - switch_millis >= 30000 && show_time)
 		{
 			handleTime();
 			switch_millis = currentMillis;
@@ -208,7 +208,7 @@ void loop()
 			digitalWrite(PONTOS, HIGH);
 		}
 		// show date for 5 seconds
-		else if (currentMillis - switch_millis < 5000 && !show_time)
+		else if (currentMillis - switch_millis >= 5000 && !show_time)
 		{
 			handleDate();
 			switch_millis = currentMillis;
@@ -223,7 +223,7 @@ void loop()
 		// cronometro
 		if (!cronometro_setup)
 		{
-			cronometro_setup = !cronometro_setup;
+			cronometro_setup = true;
 			setFourDigits(0, 0, 0, 0);
 			digitalWrite(TRACO, LOW);
 			digitalWrite(PONTOS, HIGH);

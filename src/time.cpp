@@ -94,17 +94,30 @@ void handleDate()
     setFourDigits(current_month_A, current_month_B, current_day_A, current_day_B);
 }
 
+unsigned long blink_millis = 0;
+bool state = false;
+
 void light_led_strips(int index)
 {
 	if (index == 0)
 	{
-		digitalWrite(LED_STRIP_HOURS, HIGH);
         digitalWrite(LED_STRIP_MINUTES, LOW);
+
+        if (currentMillis - blink_millis > 500)
+        {
+            state = !state;
+            digitalWriteBool(LED_STRIP_HOURS, state);
+        }
 	}
 	else if (index == 1)
 	{
 		digitalWrite(LED_STRIP_HOURS, LOW);
-        digitalWrite(LED_STRIP_MINUTES, HIGH);
+
+        if (currentMillis - blink_millis > 500)
+        {
+            state = !state;
+            digitalWriteBool(LED_STRIP_MINUTES, state);
+        }
 	}
     else if (index == -1)
     {
