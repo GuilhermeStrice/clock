@@ -88,6 +88,8 @@ void setupNetworkSelectionServer()
 	server.begin();
 }
 
+bool statee;
+
 void setup() 
 {
 	setupPins();
