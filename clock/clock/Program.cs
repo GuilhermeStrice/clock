@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using Unosquare.RaspberryIO;
-using Unosquare.WiringPi;
 
 namespace clock
 {
@@ -9,7 +8,7 @@ namespace clock
     {
         static void Main(string[] args)
         {
-            Pi.Init<BootstrapWiringPi>();
+            Pi.Init<Unosquare.PiGpio.BootstrapPiGpio>();
             Numbers.Init(17, 27, 22, 10, 5, 6, 13, 19, 26, 21, 20);
 
             bool state = false;
