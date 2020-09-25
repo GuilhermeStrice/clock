@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Unosquare.RaspberryIO;
-using Unosquare.RaspberryIO.Abstractions;
-using Unosquare.RaspberryIO.Camera;
+using Unosquare.PiGpio.NativeEnums;
+using Unosquare.PiGpio.NativeMethods;
 
 namespace clock
 {
@@ -11,23 +10,23 @@ namespace clock
     {
         static bool first_number_state = false, second_number_state = false, third_number_state = false, fourth_number_state = false;
 
-        static int H1, H2, M1, M2;
-        static int A, B, C, D, E, F, G;
+        static SystemGpio H1, H2, M1, M2;
+        static SystemGpio A, B, C, D, E, F, G;
 
-        public static void Init(int H1, int H2, int M1, int M2, int A, int B, int C, int D, int E, int F, int G)
+        public static void Init(SystemGpio H1, SystemGpio H2, SystemGpio M1, SystemGpio M2,
+            SystemGpio A, SystemGpio B, SystemGpio C, SystemGpio D, SystemGpio E, SystemGpio F, SystemGpio G)
         {
-            Pi.Gpio[H1].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[H2].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[M1].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[M1].PinMode = GpioPinDriveMode.Output;
-            
-            Pi.Gpio[A].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[B].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[C].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[D].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[E].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[F].PinMode = GpioPinDriveMode.Output;
-            Pi.Gpio[G].PinMode = GpioPinDriveMode.Output;
+            IO.GpioSetMode(H1, PinMode.Output);
+            IO.GpioSetMode(H2, PinMode.Output);
+            IO.GpioSetMode(M1, PinMode.Output);
+            IO.GpioSetMode(M2, PinMode.Output);
+            IO.GpioSetMode(A, PinMode.Output);
+            IO.GpioSetMode(B, PinMode.Output);
+            IO.GpioSetMode(C, PinMode.Output);
+            IO.GpioSetMode(D, PinMode.Output);
+            IO.GpioSetMode(E, PinMode.Output);
+            IO.GpioSetMode(F, PinMode.Output);
+            IO.GpioSetMode(G, PinMode.Output);
         }
 
         public static void CurrentNumber(uint number)
@@ -72,13 +71,13 @@ namespace clock
 
         public static void setNumber(bool a, bool b, bool c, bool d, bool e, bool f, bool g)
         {
-            Pi.Gpio[A].Write(a);
-            Pi.Gpio[B].Write(b);
-            Pi.Gpio[C].Write(c);
-            Pi.Gpio[D].Write(d);
-            Pi.Gpio[E].Write(e);
-            Pi.Gpio[F].Write(f);
-            Pi.Gpio[G].Write(g);
+            IO.GpioWrite(A, a);
+            IO.GpioWrite(B, b);
+            IO.GpioWrite(C, c);
+            IO.GpioWrite(D, d);
+            IO.GpioWrite(E, e);
+            IO.GpioWrite(F, f);
+            IO.GpioWrite(G, g);
         }
 
         static void zero()
@@ -138,31 +137,31 @@ namespace clock
 
             if (index == 0)
             {
-                Pi.Gpio[H1].Write(true);
-                Pi.Gpio[H2].Write(false);
-                Pi.Gpio[M1].Write(false);
-                Pi.Gpio[M2].Write(false);
+                IO.GpioWrite(H1, true);
+                IO.GpioWrite(H2, false);
+                IO.GpioWrite(M1, false);
+                IO.GpioWrite(M2, false);
             }
             else if (index == 1)
             {
-                Pi.Gpio[H1].Write(false);
-                Pi.Gpio[H2].Write(true);
-                Pi.Gpio[M1].Write(false);
-                Pi.Gpio[M2].Write(false);
+                IO.GpioWrite(H1, false);
+                IO.GpioWrite(H2, true);
+                IO.GpioWrite(M1, false);
+                IO.GpioWrite(M2, false);
             }
             else if (index == 2)
             {
-                Pi.Gpio[H1].Write(false);
-                Pi.Gpio[H2].Write(false);
-                Pi.Gpio[M1].Write(true);
-                Pi.Gpio[M2].Write(false);
+                IO.GpioWrite(H1, false);
+                IO.GpioWrite(H2, false);
+                IO.GpioWrite(M1, true);
+                IO.GpioWrite(M2, false);
             }
             else // should be 3
             {
-                Pi.Gpio[H1].Write(false);
-                Pi.Gpio[H2].Write(false);
-                Pi.Gpio[M1].Write(false);
-                Pi.Gpio[M2].Write(true);
+                IO.GpioWrite(H1, false);
+                IO.GpioWrite(H2, false);
+                IO.GpioWrite(M1, false);
+                IO.GpioWrite(M2, true);
             }
         }
     }

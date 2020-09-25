@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading;
+using Unosquare.PiGpio.NativeEnums;
+using Unosquare.PiGpio.NativeMethods;
 using Unosquare.RaspberryIO;
 
 namespace clock
@@ -8,8 +10,10 @@ namespace clock
     {
         static void Main(string[] args)
         {
-            Pi.Init<Unosquare.PiGpio.BootstrapPiGpio>();
-            Numbers.Init(17, 27, 22, 10, 5, 6, 13, 19, 26, 21, 20);
+            Setup.GpioInitialise();
+
+            Numbers.Init(SystemGpio.Bcm17, SystemGpio.Bcm27, SystemGpio.Bcm22, SystemGpio.Bcm10, 
+                SystemGpio.Bcm05, SystemGpio.Bcm06, SystemGpio.Bcm13, SystemGpio.Bcm19, SystemGpio.Bcm26, SystemGpio.Bcm21, SystemGpio.Bcm20);
 
             bool state = false;
 
