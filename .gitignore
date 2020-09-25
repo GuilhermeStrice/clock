@@ -372,3 +372,15 @@ MigrationBackup/
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode
 *.pdsbak
 pcb/clock.pdsprj.STRICE-PC.Utilizador.workspace
+
+# Created by https://www.toptal.com/developers/gitignore/api/platformio
+# Edit at https://www.toptal.com/developers/gitignore?templates=platformio
+
+### PlatformIO ###
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+.pio
+
+# End of https://www.toptal.com/developers/gitignore/api/platformio
