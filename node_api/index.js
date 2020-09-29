@@ -3,15 +3,9 @@ const led = new Gpio(17, 'out');
 
 var value = false;
 
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-} 
-
 while (true)
 {
     led.writeSync(value);
     value = !value;
-    await sleep(2000);
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1000);
 }
