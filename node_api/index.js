@@ -1,12 +1,18 @@
-const Gpio = require('onoff').Gpio;
-const led = new Gpio(4, 'out');
+'use strict'
 
-var value = false;
+const Numbers = require("./numbers");
 
-while (true)
+var currentHour = 0;
+var currentMinute = 0;
+
+var numbers = new Numbers();
+
+function handleClock()
 {
-    led.writeSync(value ? 1 : 0);
-    value = !value;
-    console.log((value ? "on" : "off"));
-    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1000);
+
 }
+
+setInterval(function()
+{
+    handleClock();
+}, 1);
