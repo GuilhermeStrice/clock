@@ -154,28 +154,28 @@ export class Numbers
     switchNumbers()
     {
         if (!this.firstNumberState && !this.secondNumberState && !this.thirdNumberState && !this.fourthNumberState)
-            this.switchFirstNumber();
+            this.switchFirstNumber(true);
         else
         {
             if (this.firstNumberState)
             {
-                this.switchFirstNumber();
-                this.switchSecondNumber();
+                this.switchFirstNumber(false);
+                this.switchSecondNumber(true);
             }
             else if (this.secondNumberState)
             {
-                this.switchSecondNumber();
-                this.switchThirdNumber();
+                this.switchSecondNumber(false);
+                this.switchThirdNumber(true);
             }
             else if (this.thirdNumberState)
             {
-                this.switchThirdNumber();
-                this.switchFourthNumber();
+                this.switchThirdNumber(false);
+                this.switchFourthNumber(true);
             }
             else if (this.fourthNumberState)
             {
-                this.switchFourthNumber();
-                this.switchFirstNumber();
+                this.switchFourthNumber(false);
+                this.switchFirstNumber(true);
             }
         }
     }
