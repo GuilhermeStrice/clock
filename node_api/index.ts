@@ -45,7 +45,7 @@ var number = 1;
 
 numbers.switchFirstNumber(false);
 numbers.switchSecondNumber(false);
-numbers.switchThirdNumber(false);
+numbers.switchThirdNumber(true);
 numbers.switchFourthNumber(false);
 
 setInterval(function()
