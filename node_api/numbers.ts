@@ -42,11 +42,6 @@ export class Numbers
         this.secondNumberState = false;
         this.thirdNumberState = false;
         this.fourthNumberState = false;
-
-        this.switchFirstNumber();
-        this.switchSecondNumber();
-        this.switchThirdNumber();
-        this.switchFourthNumber();
     }
 
     setNumber(a: boolean, b: boolean, c: boolean, d: boolean, e: boolean, f: boolean, g: boolean)
@@ -183,24 +178,24 @@ export class Numbers
     switchFirstNumber()
     {
         this.firstNumberState = !this.firstNumberState;
-        this.H1.writeSync(this.firstNumberState ? Low : High);
+        this.H1.writeSync(this.firstNumberState ? High : Low);
     }
 
     switchSecondNumber()
     {
         this.secondNumberState = !this.secondNumberState;
-        this.H2.writeSync(this.secondNumberState ? Low : High);
+        this.H2.writeSync(this.secondNumberState ? High : Low);
     }
 
     switchThirdNumber()
     {
         this.thirdNumberState = !this.thirdNumberState;
-        this.M1.writeSync(this.thirdNumberState ? Low : High);
+        this.M1.writeSync(this.thirdNumberState ? High : Low);
     }
 
     switchFourthNumber()
     {
         this.fourthNumberState = !this.fourthNumberState;
-        this.M2.writeSync(this.fourthNumberState ? Low : High);
+        this.M2.writeSync(this.fourthNumberState ? High : Low);
     }
 }
