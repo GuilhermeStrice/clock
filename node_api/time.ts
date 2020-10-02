@@ -26,14 +26,31 @@ export class Time
 
             if (!this.showSeconds)
             {
-                var hours = SplitNumber(this.date.getHours());
-                this.H1 = hours[0];
-                this.H2 = hours[1];
+                var hours = this.date.getHours();
+                if (hours <= 10)
+                {
+                    var hoursArr = SplitNumber(this.date.getHours());
+                    this.H1 = hoursArr[0];
+                    this.H2 = hoursArr[1];
+                }
+                else
+                {
+                    this.H1 = 0;
+                    this.H2 = hours;
+                }
 
-                var minutes = SplitNumber(this.date.getMinutes());
-                this.M1 = minutes[0];
-                this.M2 = minutes[1];
-                console.log(minutes);
+                var minutes = this.date.getMinutes();
+                if (minutes <= 10)
+                {
+                    var minutesArr = SplitNumber(this.date.getMinutes());
+                    this.M1 = minutesArr[0];
+                    this.M2 = minutesArr[1];
+                }
+                else
+                {
+                    this.M1 = 0;
+                    this.M2 = minutes;
+                }
             }
             else
             {
