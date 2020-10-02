@@ -28,10 +28,10 @@ export class Time
 
             var minutes = this.date.getMinutes();
             var minutesArr = SplitNumber(minutes);
-            this.H1 = minutesArr[0];
-            this.H2 = minutesArr[1];
-            this.M1 = hoursArr[0];
-            this.M2 = hoursArr[1];
+            this.H1 = hoursArr[0];
+            this.H2 = hoursArr[1];
+            this.M1 = minutesArr[0];
+            this.M2 = minutesArr[1];
         //}
         //else
         // {
@@ -47,19 +47,19 @@ export class Time
 
     handleDisplay() // millisecond
     {
-        if (this.numbers.firstNumberState)
+        if (this.numbers.fourthNumberState)
         {
             this.numbers.setNumberParam(this.H1);
         }
-        else if (this.numbers.secondNumberState)
+        else if (this.numbers.firstNumberState)
         {
             this.numbers.setNumberParam(this.H2);
         }
-        else if (this.numbers.thirdNumberState)
+        else if (this.numbers.secondNumberState)
         {
             this.numbers.setNumberParam(this.M1);
         }
-        else if (this.numbers.fourthNumberState)
+        else if (this.numbers.thirdNumberState)
         {
             this.numbers.setNumberParam(this.M2);
         }
