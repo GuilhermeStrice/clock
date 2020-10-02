@@ -66,30 +66,18 @@ export class Time
         if (this.numbers.firstNumberState)
         {
             this.numbers.setNumberParam(this.H1);
-            this.numbers.switchFirstNumber(false);
-            this.numbers.switchSecondNumber(true);
         }
         else if (this.numbers.secondNumberState)
         {
             this.numbers.setNumberParam(this.H2);
-            this.numbers.switchSecondNumber(false);
-            this.numbers.switchThirdNumber(true);
         }
         else if (this.numbers.thirdNumberState)
         {
             this.numbers.setNumberParam(this.M1);
-            this.numbers.switchThirdNumber(false);
-            this.numbers.switchFourthNumber(true);
         }
         else if (this.numbers.fourthNumberState)
         {
             this.numbers.setNumberParam(this.M2);
-            this.numbers.switchFourthNumber(false);
-            this.numbers.switchFirstNumber(true);
-        }
-        else
-        {
-            this.numbers.switchFirstNumber(true);
         }
 
         this.numbers.switchNumbers();
