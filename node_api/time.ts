@@ -25,13 +25,13 @@ export class Time
         //{
             var hours = this.date.getHours();
             var hoursArr = SplitNumber(hours);
-            this.H1 = hoursArr[0];
-            this.H2 = hoursArr[1];
 
             var minutes = this.date.getMinutes();
             var minutesArr = SplitNumber(minutes);
+            this.H1 = minutesArr[1];
+            this.H2 = hoursArr[1];
             this.M1 = minutesArr[0];
-            this.M2 = minutesArr[1];
+            this.M2 = hoursArr[0];
         //}
         //else
         // {
