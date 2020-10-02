@@ -23,7 +23,6 @@ export class Time
 
         //if (!this.showSeconds)
         //{
-            console.log(this.date);
             var hours = this.date.getHours();
             var hoursArr = SplitNumber(hours);
             this.H1 = hoursArr[0];
