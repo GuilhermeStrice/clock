@@ -44,7 +44,7 @@ var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 20, 16);
 var number = 1;
 
 numbers.switchFirstNumber();
-numbers.switchThirdNumber();
+numbers.switchThirdNumber(true);
 numbers.switchThirdNumber();
 numbers.switchFourthNumber();
 
