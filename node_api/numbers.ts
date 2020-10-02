@@ -178,24 +178,24 @@ export class Numbers
     switchFirstNumber()
     {
         this.firstNumberState = !this.firstNumberState;
-        this.H1.writeSync(this.firstNumberState ? High : Low);
+        this.H1.writeSync(this.firstNumberState ? Low : High);
     }
 
     switchSecondNumber()
     {
         this.secondNumberState = !this.secondNumberState;
-        this.H2.writeSync(this.secondNumberState ? High : Low);
+        this.H2.writeSync(this.secondNumberState ? Low : High);
     }
 
     switchThirdNumber()
     {
         this.thirdNumberState = !this.thirdNumberState;
-        this.M1.writeSync(this.thirdNumberState ? High : Low);
+        this.M1.writeSync(this.thirdNumberState ? Low : High);
     }
 
     switchFourthNumber()
     {
         this.fourthNumberState = !this.fourthNumberState;
-        this.M2.writeSync(this.fourthNumberState ? High : Low);
+        this.M2.writeSync(this.fourthNumberState ? Low : High);
     }
 }
