@@ -182,21 +182,21 @@ export class Numbers
 
     switchFirstNumber(setState: boolean = false)
     {
-        this.H1.writeSync(setState ? High : Low);
+        this.H1.writeSync(!setState ? High : Low);
     }
 
     switchSecondNumber(setState: boolean = false)
     {
-        this.H2.writeSync(setState ? High : Low);
+        this.H2.writeSync(!setState ? High : Low);
     }
 
     switchThirdNumber(setState: boolean = false)
     {
-        this.M1.writeSync(setState ? High : Low);
+        this.M1.writeSync(!setState ? High : Low);
     }
 
     switchFourthNumber(setState: boolean = false)
     {
-        this.M2.writeSync(setState ? High : Low);
+        this.M2.writeSync(!setState ? High : Low);
     }
 }
