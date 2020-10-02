@@ -45,7 +45,6 @@ var number = 1;
 
 numbers.switchFirstNumber();
 numbers.switchThirdNumber(true);
-numbers.switchThirdNumber();
 numbers.switchFourthNumber();
 
 setInterval(function()
