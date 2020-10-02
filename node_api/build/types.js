@@ -1,11 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClockTypes = void 0;
-var ClockTypes = /** @class */ (function () {
-    function ClockTypes() {
-    }
-    ClockTypes.High = 1;
-    ClockTypes.Low = 0;
-    return ClockTypes;
-}());
-exports.ClockTypes = ClockTypes;
+exports.Low = exports.High = void 0;
+var High = 1;
+exports.High = High;
+var Low = 0;
+exports.Low = Low;

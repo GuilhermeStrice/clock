@@ -5,24 +5,13 @@ var onoff_1 = require("onoff");
 var types_1 = require("./types");
 var Numbers = /** @class */ (function () {
     function Numbers(H1, H2, M1, M2, A, B, C, D, E, F, G) {
-        this.H1 = new onoff_1.Gpio(0, "out");
-        this.H2 = new onoff_1.Gpio(0, "out");
-        this.M1 = new onoff_1.Gpio(0, "out");
-        this.M2 = new onoff_1.Gpio(0, "out");
-        this.A = new onoff_1.Gpio(0, "out");
-        this.B = new onoff_1.Gpio(0, "out");
-        this.C = new onoff_1.Gpio(0, "out");
-        this.D = new onoff_1.Gpio(0, "out");
-        this.E = new onoff_1.Gpio(0, "out");
-        this.F = new onoff_1.Gpio(0, "out");
-        this.G = new onoff_1.Gpio(0, "out");
         this.firstNumberState = false;
         this.secondNumberState = false;
         this.thirdNumberState = false;
         this.fourthNumberState = false;
         if (H1 == 0 || H2 == 0 || M1 == 0 || M2 == 0 ||
             A == 0 || B == 0 || C == 0 || D == 0 || E == 0 || F == 0 || G == 0)
-            throw 1;
+            return;
         this.H1 = new onoff_1.Gpio(H1, 'out');
         this.H2 = new onoff_1.Gpio(H2, 'out');
         this.M1 = new onoff_1.Gpio(M1, 'out');
@@ -40,13 +29,13 @@ var Numbers = /** @class */ (function () {
         this.fourthNumberState = false;
     }
     Numbers.prototype.setNumber = function (a, b, c, d, e, f, g) {
-        this.A.writeSync(a ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
-        this.B.writeSync(b ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
-        this.C.writeSync(c ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
-        this.D.writeSync(d ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
-        this.E.writeSync(e ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
-        this.F.writeSync(f ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
-        this.G.writeSync(g ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
+        this.A.writeSync(a ? types_1.High : types_1.Low);
+        this.B.writeSync(b ? types_1.High : types_1.Low);
+        this.C.writeSync(c ? types_1.High : types_1.Low);
+        this.D.writeSync(d ? types_1.High : types_1.Low);
+        this.E.writeSync(e ? types_1.High : types_1.Low);
+        this.F.writeSync(f ? types_1.High : types_1.Low);
+        this.G.writeSync(g ? types_1.High : types_1.Low);
     };
     Numbers.prototype.allOn = function () {
         this.setNumber(true, true, true, true, true, true, true);
@@ -138,19 +127,19 @@ var Numbers = /** @class */ (function () {
     };
     Numbers.prototype.switchFirstNumber = function () {
         this.firstNumberState = !this.firstNumberState;
-        this.H1.writeSync(this.firstNumberState ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
+        this.H1.writeSync(this.firstNumberState ? types_1.High : types_1.Low);
     };
     Numbers.prototype.switchSecondNumber = function () {
         this.secondNumberState = !this.secondNumberState;
-        this.H2.writeSync(this.secondNumberState ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
+        this.H2.writeSync(this.secondNumberState ? types_1.High : types_1.Low);
     };
     Numbers.prototype.switchThirdNumber = function () {
         this.thirdNumberState = !this.thirdNumberState;
-        this.M1.writeSync(this.thirdNumberState ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
+        this.M1.writeSync(this.thirdNumberState ? types_1.High : types_1.Low);
     };
     Numbers.prototype.switchFourthNumber = function () {
         this.fourthNumberState = !this.fourthNumberState;
-        this.M2.writeSync(this.fourthNumberState ? types_1.ClockTypes.High : types_1.ClockTypes.Low);
+        this.M2.writeSync(this.fourthNumberState ? types_1.High : types_1.Low);
     };
     return Numbers;
 }());
