@@ -20,7 +20,7 @@ var time = new Time(numbers);
 setInterval(function()
 {
     time.handleDisplay();
-}, 30);
+}, 1000);
 
 setInterval(function()
 {
