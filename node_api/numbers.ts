@@ -97,7 +97,7 @@ export class Numbers
 
     seven()
     {
-        this.setNumber(true, false, false, false, true, true, true);
+        this.setNumber(true, true, true, false, false, false, false);
     }
 
     eight()
