@@ -41,8 +41,6 @@ var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 20, 16);
 //     }
 // }, 500);
 
-numbers.switchSecondNumber();
-
 var number = 1;
 
 setInterval(function()
