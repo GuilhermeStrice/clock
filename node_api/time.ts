@@ -24,30 +24,14 @@ export class Time
         //if (!this.showSeconds)
         //{
             var hours = this.date.getHours();
-            if (hours <= 10)
-            {
-                var hoursArr = SplitNumber(hours);
-                this.H1 = hoursArr[0];
-                this.H2 = hoursArr[1];
-            }
-            else
-            {
-                this.H1 = 0;
-                this.H2 = hours;
-            }
+            var hoursArr = SplitNumber(hours);
+            this.H1 = hoursArr[0];
+            this.H2 = hoursArr[1];
 
             var minutes = this.date.getMinutes();
-            if (minutes <= 10)
-            {
-                var minutesArr = SplitNumber(minutes);
-                this.M1 = minutesArr[0];
-                this.M2 = minutesArr[1];
-            }
-            else
-            {
-                this.M1 = 0;
-                this.M2 = minutes;
-            }
+            var minutesArr = SplitNumber(minutes);
+            this.M1 = minutesArr[0];
+            this.M2 = minutesArr[1];
         //}
         //else
         // {
