@@ -33,6 +33,7 @@ export class Time
                 var minutes = SplitNumber(this.date.getMinutes());
                 this.M1 = minutes[0];
                 this.M2 = minutes[1];
+                console.log(minutes);
             }
             else
             {
