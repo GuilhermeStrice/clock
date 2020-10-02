@@ -47,19 +47,19 @@ export class Time
 
     handleDisplay() // millisecond
     {
-        if (this.numbers.fourthNumberState)
+        if (this.numbers.firstNumberState)
         {
             this.numbers.setNumberParam(this.H1);
         }
-        else if (this.numbers.firstNumberState)
+        else if (this.numbers.secondNumberState)
         {
             this.numbers.setNumberParam(this.H2);
         }
-        else if (this.numbers.secondNumberState)
+        else if (this.numbers.thirdNumberState)
         {
             this.numbers.setNumberParam(this.M1);
         }
-        else if (this.numbers.thirdNumberState)
+        else if (this.numbers.fourthNumberState)
         {
             this.numbers.setNumberParam(this.M2);
         }
