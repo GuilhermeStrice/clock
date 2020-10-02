@@ -3,17 +3,17 @@ import { High, Low } from "./types";
 
 export class Numbers
 {
-    H1: Gpio = new Gpio(0, "out");
-    H2: Gpio = new Gpio(0, "out");
-    M1: Gpio = new Gpio(0, "out");
-    M2: Gpio = new Gpio(0, "out");
-    A: Gpio = new Gpio(0, "out");
-    B: Gpio = new Gpio(0, "out");
-    C: Gpio = new Gpio(0, "out");
-    D: Gpio = new Gpio(0, "out");
-    E: Gpio = new Gpio(0, "out");
-    F: Gpio = new Gpio(0, "out");
-    G: Gpio = new Gpio(0, "out");
+    H1: any;
+    H2: any;
+    M1: any;
+    M2: any;
+    A: any;
+    B: any;
+    C: any;
+    D: any;
+    E: any;
+    F: any;
+    G: any;
 
     firstNumberState: boolean = false;
     secondNumberState: boolean = false;

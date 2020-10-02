@@ -6,7 +6,7 @@ export class Time
     gotDate: boolean = false;
     date: Date = new Date();
     showSeconds: boolean = false;
-    numbers: Numbers = new Numbers(0,0,0,0,0,0,0,0,0,0,0);
+    numbers: any;
 
     H1: number = 0;
     H2: number = 0;
