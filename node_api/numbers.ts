@@ -42,6 +42,11 @@ export class Numbers
         this.secondNumberState = false;
         this.thirdNumberState = false;
         this.fourthNumberState = false;
+
+        this.switchFirstNumber(true);
+        this.switchSecondNumber(true);
+        this.switchThirdNumber(true);
+        this.switchFourthNumber(true);
     }
 
     setNumber(a: boolean, b: boolean, c: boolean, d: boolean, e: boolean, f: boolean, g: boolean)
@@ -175,27 +180,31 @@ export class Numbers
         }
     }
 
-    switchFirstNumber()
+    switchFirstNumber(setState: boolean = false)
     {
-        this.firstNumberState = !this.firstNumberState;
+        if (!setState)
+            this.firstNumberState = !this.firstNumberState;
         this.H1.writeSync(this.firstNumberState ? High : Low);
     }
 
-    switchSecondNumber()
+    switchSecondNumber(setState: boolean = false)
     {
-        this.secondNumberState = !this.secondNumberState;
+        if (!setState)
+            this.secondNumberState = !this.secondNumberState;
         this.H2.writeSync(this.secondNumberState ? High : Low);
     }
 
-    switchThirdNumber()
+    switchThirdNumber(setState: boolean = false)
     {
-        this.thirdNumberState = !this.thirdNumberState;
+        if (!setState)
+            this.thirdNumberState = !this.thirdNumberState;
         this.M1.writeSync(this.thirdNumberState ? High : Low);
     }
 
-    switchFourthNumber()
+    switchFourthNumber(setState: boolean = false)
     {
-        this.fourthNumberState = !this.fourthNumberState;
+        if (!setState)
+            this.fourthNumberState = !this.fourthNumberState;
         this.M2.writeSync(this.fourthNumberState ? High : Low);
     }
 }
