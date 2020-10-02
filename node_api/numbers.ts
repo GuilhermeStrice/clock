@@ -42,6 +42,11 @@ export class Numbers
         this.secondNumberState = false;
         this.thirdNumberState = false;
         this.fourthNumberState = false;
+
+        this.switchFirstNumber();
+        this.switchSecondNumber();
+        this.switchThirdNumber();
+        this.switchFourthNumber();
     }
 
     setNumber(a: boolean, b: boolean, c: boolean, d: boolean, e: boolean, f: boolean, g: boolean)
