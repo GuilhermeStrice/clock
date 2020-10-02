@@ -51,4 +51,5 @@ setInterval(function()
         number = 1;
     numbers.setNumberParam(number);
     number++;
-}, 2000);
+    console.log("running");
+}, 1000);
