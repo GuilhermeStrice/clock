@@ -20,7 +20,7 @@ var time = new Time(numbers);
 setInterval(function()
 {
     time.handleDisplay();
-}, 5);
+}, 2);
 
 setInterval(function()
 {
@@ -28,7 +28,7 @@ setInterval(function()
 
 //     btn_modes.handleModesPin();
 //     btn_modes.handleResetPin();
-}, 300);
+}, 700);
 
 // var on = false;
 // var currentSelectedNumber = 3; // from 0 - 2 // first number max 23 // second number max 59
