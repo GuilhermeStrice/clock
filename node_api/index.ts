@@ -4,7 +4,7 @@ import { Timer } from 'easytimer.js';
 import { Time } from "./time";
 import { ButtonsModes, Modes } from "./buttons_modes";
 
-var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 7, 16);
+var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 20, 16);
 
 //var time = new Time(numbers);
 
