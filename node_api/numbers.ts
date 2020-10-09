@@ -157,22 +157,22 @@ export class Numbers
             this.switchFirstNumber(true);
         else
         {
-            if (this.fourthNumberState)
+            if (this.firstNumberState)
             {
                 this.switchFirstNumber(false);
                 this.switchSecondNumber(true);
             }
-            else if (this.firstNumberState)
+            else if (this.secondNumberState)
             {
                 this.switchSecondNumber(false);
                 this.switchThirdNumber(true);
             }
-            else if (this.secondNumberState)
+            else if (this.thirdNumberState)
             {
                 this.switchThirdNumber(false);
                 this.switchFourthNumber(true);
             }
-            else if (this.thirdNumberState)
+            else if (this.fourthNumberState)
             {
                 this.switchFourthNumber(false);
                 this.switchFirstNumber(true);
