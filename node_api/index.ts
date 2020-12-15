@@ -57,20 +57,20 @@ import { Gpio } from "onoff";
 //     console.log("running");
 // }, 1000);
 
-var First = new Gpio(8, "out");
+//var First = new Gpio(8, "out");
 var Second = new Gpio(23, "out");
 
 setInterval(function()
 {
     if (on)
     {
-        First.writeSync(0);
+        //First.writeSync(0);
         Second.writeSync(1);
         console.log("on");
     }
     else
     {
-        First.writeSync(1);
+        //First.writeSync(1);
         Second.writeSync(0);
         console.log("off");
     }
