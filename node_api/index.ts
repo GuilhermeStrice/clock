@@ -1,12 +1,12 @@
-import { Numbers } from "./numbers";
+//import { Numbers } from "./numbers";
 import { Gpio } from "onoff";
-import { Timer } from 'easytimer.js';
-import { Time } from "./time";
-import { ButtonsModes, Modes } from "./buttons_modes";
+//import { Timer } from 'easytimer.js';
+//import { Time } from "./time";
+//import { ButtonsModes, Modes } from "./buttons_modes";
 
-var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 20, 16);
+//var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 20, 16);
 
-var time = new Time(numbers);
+//var time = new Time(numbers);
 
 //var btn_modes = new ButtonsModes();
 
@@ -17,20 +17,20 @@ var time = new Time(numbers);
 
 //var reset = new Gpio(0, "in", "both");
 
-setInterval(function()
-{
-    time.handleDisplay();
-},5);
+//setInterval(function()
+//{
+//    time.handleDisplay();
+//},5);
 
-setInterval(function()
-{
-    time.handleDateTime();
+//setInterval(function()
+//{
+//    time.handleDateTime();
 
 //     btn_modes.handleModesPin();
 //     btn_modes.handleResetPin();
-}, 700);
+//}, 700);
 
-// var on = false;
+ var on = false;
 // var currentSelectedNumber = 3; // from 0 - 2 // first number max 23 // second number max 59
 
 // setInterval(function()
@@ -56,3 +56,20 @@ setInterval(function()
 //     number++;
 //     console.log("running");
 // }, 1000);
+
+var First = new Gpio(1, "out");
+var Second = new Gpio(2, "out");
+
+setInterval(function()
+{
+    if (on)
+    {
+        First.writeSync(0);
+        Second.writeSync(1);
+    }
+    else
+    {
+        First.writeSync(1);
+        Second.writeSync(0);
+    }
+}, 250);
