@@ -57,8 +57,8 @@ import { Gpio } from "onoff";
 //     console.log("running");
 // }, 1000);
 
-var First = new Gpio(11, "out");
-var Second = new Gpio(2, "out");
+var First = new Gpio(8, "out");
+var Second = new Gpio(23, "out");
 
 setInterval(function()
 {
