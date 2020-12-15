@@ -57,7 +57,7 @@ import { Gpio } from "onoff";
 //     console.log("running");
 // }, 1000);
 
-var First = new Gpio(1, "out");
+var First = new Gpio(11, "out");
 var Second = new Gpio(2, "out");
 
 setInterval(function()
@@ -66,10 +66,12 @@ setInterval(function()
     {
         First.writeSync(0);
         Second.writeSync(1);
+        console.log("on");
     }
     else
     {
         First.writeSync(1);
         Second.writeSync(0);
+        console.log("off");
     }
 }, 250);
