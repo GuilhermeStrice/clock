@@ -76,4 +76,4 @@ setInterval(function()
     }
 
     on = !on;
-}, 250);
+}, 750);
