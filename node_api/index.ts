@@ -74,4 +74,6 @@ setInterval(function()
         Second.writeSync(0);
         console.log("off");
     }
+
+    on = !on;
 }, 250);
