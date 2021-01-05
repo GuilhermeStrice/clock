@@ -59,9 +59,6 @@ import { Gpio } from "onoff";
 
 //var First = new Gpio(8, "out");
 var um = new Gpio(26, "out");
-var dois = new Gpio(23, "out");
-var tres = new Gpio(24, "out");
-var quatro = new Gpio(25, "out");
 
 setInterval(function()
 {
