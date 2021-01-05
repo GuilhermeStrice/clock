@@ -58,20 +58,25 @@ import { Gpio } from "onoff";
 // }, 1000);
 
 //var First = new Gpio(8, "out");
-var Second = new Gpio(23, "out");
+var um = new Gpio(26, "out");
+var dois = new Gpio(23, "out");
+var tres = new Gpio(24, "out");
+var quatro = new Gpio(25, "out");
 
 setInterval(function()
 {
     if (on)
     {
         //First.writeSync(0);
-        Second.writeSync(1);
+        um.writeSync(1);
+        dois.writeSync(0);
         console.log("on");
     }
     else
     {
         //First.writeSync(1);
-        Second.writeSync(0);
+        um.writeSync(0);
+        dois.writeSync(1);
         console.log("off");
     }
 
