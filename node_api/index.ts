@@ -68,15 +68,13 @@ setInterval(function()
     if (on)
     {
         //First.writeSync(0);
-        um.writeSync(1);
-        dois.writeSync(0);
+        um.writeSync(0);
         console.log("on");
     }
     else
     {
         //First.writeSync(1);
-        um.writeSync(0);
-        dois.writeSync(1);
+        um.writeSync(1);
         console.log("off");
     }
 
