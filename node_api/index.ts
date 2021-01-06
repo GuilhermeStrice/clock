@@ -108,24 +108,12 @@ setInterval(function()
     else
     {
         //First.writeSync(1);
-        um1.writeSync(1);
-        dois1.writeSync(1);
-        tres1.writeSync(1);
         quatro1.writeSync(1);
 
-        um2.writeSync(1);
-        dois2.writeSync(1);
-        tres2.writeSync(1);
         quatro2.writeSync(1);
 
-        um3.writeSync(1);
-        dois3.writeSync(1);
-        tres3.writeSync(1);
         quatro3.writeSync(1);
 
-        um4.writeSync(1);
-        dois4.writeSync(1);
-        tres4.writeSync(1);
         quatro4.writeSync(1);
         console.log("on");
     }
