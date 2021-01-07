@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var numbers_1 = require("./numbers");
-var numbers = new numbers_1.Numbers(4, 17, 27, 22, 18, 23, 24, 25, 8, 7, 16);
+//import { Numbers } from "./numbers";
+var onoff_1 = require("onoff");
+//import { Timer } from 'easytimer.js';
+//import { Time } from "./time";
+//import { ButtonsModes, Modes } from "./buttons_modes";
+//var numbers = new Numbers(4, 17, 27, 22, 18, 23, 24, 25, 12, 20, 16);
 //var time = new Time(numbers);
 //var btn_modes = new ButtonsModes();
 //var up = new Gpio(0, "in", "both");
@@ -12,14 +16,14 @@ var numbers = new numbers_1.Numbers(4, 17, 27, 22, 18, 23, 24, 25, 8, 7, 16);
 //setInterval(function()
 //{
 //    time.handleDisplay();
-//}, 1);
+//},5);
 //setInterval(function()
 //{
 //    time.handleDateTime();
 //     btn_modes.handleModesPin();
 //     btn_modes.handleResetPin();
-// }, 300);
-// var on = false;
+//}, 700);
+var on = false;
 // var currentSelectedNumber = 3; // from 0 - 2 // first number max 23 // second number max 59
 // setInterval(function()
 // {
@@ -27,11 +31,31 @@ var numbers = new numbers_1.Numbers(4, 17, 27, 22, 18, 23, 24, 25, 8, 7, 16);
 //     {
 //     }
 // }, 500);
-numbers.switchFirstNumber();
-var number = 1;
+// var number = 1;
+// numbers.switchFirstNumber(false);
+// numbers.switchSecondNumber(true);
+// numbers.switchThirdNumber(false);
+// numbers.switchFourthNumber(false);
+// setInterval(function()
+// {
+//     if (number > 9)
+//         number = 1;
+//     numbers.setNumberParam(number);
+//     number++;
+//     console.log("running");
+// }, 1000);
+var First = new onoff_1.Gpio(8, "out");
+var Second = new onoff_1.Gpio(23, "out");
 setInterval(function () {
-    if (number > 9)
-        number = 1;
-    numbers.setNumberParam(number);
-    number++;
-}, 2000);
+    if (on) {
+        First.writeSync(0);
+        Second.writeSync(1);
+        console.log("on");
+    }
+    else {
+        First.writeSync(1);
+        Second.writeSync(0);
+        console.log("off");
+    }
+    on = !on;
+}, 750);

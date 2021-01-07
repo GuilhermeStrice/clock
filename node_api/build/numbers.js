@@ -27,6 +27,10 @@ var Numbers = /** @class */ (function () {
         this.secondNumberState = false;
         this.thirdNumberState = false;
         this.fourthNumberState = false;
+        this.switchFirstNumber(false);
+        this.switchSecondNumber(false);
+        this.switchThirdNumber(false);
+        this.switchFourthNumber(false);
     }
     Numbers.prototype.setNumber = function (a, b, c, d, e, f, g) {
         this.A.writeSync(a ? types_1.High : types_1.Low);
@@ -62,7 +66,7 @@ var Numbers = /** @class */ (function () {
         this.setNumber(true, false, true, true, true, true, true);
     };
     Numbers.prototype.seven = function () {
-        this.setNumber(true, false, false, false, true, true, true);
+        this.setNumber(true, true, true, false, false, false, false);
     };
     Numbers.prototype.eight = function () {
         this.setNumber(true, true, true, true, true, true, true);
@@ -105,41 +109,45 @@ var Numbers = /** @class */ (function () {
     };
     Numbers.prototype.switchNumbers = function () {
         if (!this.firstNumberState && !this.secondNumberState && !this.thirdNumberState && !this.fourthNumberState)
-            this.switchFirstNumber();
+            this.switchFirstNumber(true);
         else {
             if (this.firstNumberState) {
-                this.switchFirstNumber();
-                this.switchSecondNumber();
+                this.switchFirstNumber(false);
+                this.switchSecondNumber(true);
             }
             else if (this.secondNumberState) {
-                this.switchSecondNumber();
-                this.switchThirdNumber();
+                this.switchSecondNumber(false);
+                this.switchThirdNumber(true);
             }
             else if (this.thirdNumberState) {
-                this.switchThirdNumber();
-                this.switchFourthNumber();
+                this.switchThirdNumber(false);
+                this.switchFourthNumber(true);
             }
             else if (this.fourthNumberState) {
-                this.switchFourthNumber();
-                this.switchFirstNumber();
+                this.switchFourthNumber(false);
+                this.switchFirstNumber(true);
             }
         }
     };
-    Numbers.prototype.switchFirstNumber = function () {
-        this.firstNumberState = !this.firstNumberState;
-        this.H1.writeSync(this.firstNumberState ? types_1.High : types_1.Low);
+    Numbers.prototype.switchFirstNumber = function (setState) {
+        if (setState === void 0) { setState = false; }
+        this.firstNumberState = setState;
+        this.H1.writeSync(setState ? types_1.High : types_1.Low);
     };
-    Numbers.prototype.switchSecondNumber = function () {
-        this.secondNumberState = !this.secondNumberState;
-        this.H2.writeSync(this.secondNumberState ? types_1.High : types_1.Low);
+    Numbers.prototype.switchSecondNumber = function (setState) {
+        if (setState === void 0) { setState = false; }
+        this.secondNumberState = setState;
+        this.H2.writeSync(setState ? types_1.High : types_1.Low);
     };
-    Numbers.prototype.switchThirdNumber = function () {
-        this.thirdNumberState = !this.thirdNumberState;
-        this.M1.writeSync(this.thirdNumberState ? types_1.High : types_1.Low);
+    Numbers.prototype.switchThirdNumber = function (setState) {
+        if (setState === void 0) { setState = false; }
+        this.thirdNumberState = setState;
+        this.M1.writeSync(setState ? types_1.High : types_1.Low);
     };
-    Numbers.prototype.switchFourthNumber = function () {
-        this.fourthNumberState = !this.fourthNumberState;
-        this.M2.writeSync(this.fourthNumberState ? types_1.High : types_1.Low);
+    Numbers.prototype.switchFourthNumber = function (setState) {
+        if (setState === void 0) { setState = false; }
+        this.fourthNumberState = setState;
+        this.M2.writeSync(setState ? types_1.High : types_1.Low);
     };
     return Numbers;
 }());
