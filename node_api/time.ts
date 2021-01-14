@@ -1,23 +1,16 @@
 import { SplitNumber } from "./util";
-import { Numbers } from "./numbers";
 
 export class Time
 {
     date: Date = new Date();
-    showSeconds: boolean = false;
-    numbers: any;
+    //showSeconds: boolean = false;
 
     H1: number = 0;
     H2: number = 0;
     M1: number = 0;
     M2: number = 0;
 
-    constructor(numbers: Numbers)
-    {
-        this.numbers = numbers;
-    }
-
-    handleDateTime()
+    update()
     {
         this.date = new Date();
 
@@ -43,27 +36,5 @@ export class Time
         //     this.M1 = milliseconds[0];
         //     this.M2 = milliseconds[1];
         // }
-    }
-
-    handleDisplay() // millisecond
-    {
-        if (this.numbers.firstNumberState)
-        {
-            this.numbers.setNumberParam(this.H1);
-        }
-        else if (this.numbers.secondNumberState)
-        {
-            this.numbers.setNumberParam(this.H2);
-        }
-        else if (this.numbers.thirdNumberState)
-        {
-            this.numbers.setNumberParam(this.M1);
-        }
-        else if (this.numbers.fourthNumberState)
-        {
-            this.numbers.setNumberParam(this.M2);
-        }
-
-        this.numbers.switchNumbers();
     }
 }
